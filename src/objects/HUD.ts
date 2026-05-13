@@ -159,7 +159,6 @@ export class HUD {
   }
 
   update(state: HUDState): void {
-    const { width } = this.scene.scale;
     const ENERGY_X = 12;
     const ENERGY_Y = 12;
     const ENERGY_W = 140;

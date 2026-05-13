@@ -117,7 +117,7 @@ export class WorkItemSprite extends Phaser.GameObjects.Container {
   }
 
   private _drawTimerBar(fraction: number): void {
-    const { WIDTH, HEIGHT, RADIUS } = NOTIF;
+    const { WIDTH, HEIGHT } = NOTIF;
     this.timerBar.clear();
     const color = fraction > 0.4 ? 0x16a34a : fraction > 0.2 ? 0xfbbf24 : 0xef4444;
     this.timerBar.fillStyle(color, 0.7);
