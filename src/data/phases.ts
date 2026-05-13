@@ -1,0 +1,75 @@
+import type { EscalationPhaseConfig } from '../types/GameState';
+
+export const ESCALATION_PHASES: EscalationPhaseConfig[] = [
+  {
+    name: 'morning-ramp',
+    startTime: 0,
+    endTime: 30,
+    maxActiveItems: 3,
+    spawnIntervalMs: 10_000,
+    itemTypeMix: [
+      { type: 'slack', weight: 50 },
+      { type: 'email', weight: 30 },
+      { type: 'calendar', weight: 20 },
+    ],
+  },
+  {
+    name: 'mid-morning',
+    startTime: 30,
+    endTime: 60,
+    maxActiveItems: 5,
+    spawnIntervalMs: 7_000,
+    itemTypeMix: [
+      { type: 'slack', weight: 30 },
+      { type: 'email', weight: 25 },
+      { type: 'calendar', weight: 15 },
+      { type: 'sync', weight: 20 },
+      { type: 'client', weight: 10 },
+    ],
+  },
+  {
+    name: 'pre-lunch',
+    startTime: 60,
+    endTime: 90,
+    maxActiveItems: 8,
+    spawnIntervalMs: 5_000,
+    itemTypeMix: [
+      { type: 'slack', weight: 20 },
+      { type: 'email', weight: 20 },
+      { type: 'calendar', weight: 10 },
+      { type: 'client', weight: 25 },
+      { type: 'sync', weight: 15 },
+      { type: 'per-my-last', weight: 10 },
+    ],
+  },
+  {
+    name: 'afternoon-slump',
+    startTime: 90,
+    endTime: 120,
+    maxActiveItems: 10,
+    spawnIntervalMs: 4_000,
+    itemTypeMix: [
+      { type: 'slack', weight: 15 },
+      { type: 'email', weight: 20 },
+      { type: 'client', weight: 25 },
+      { type: 'sync', weight: 20 },
+      { type: 'per-my-last', weight: 10 },
+      { type: 'p0', weight: 10 },
+    ],
+  },
+  {
+    name: 'eod-chaos',
+    startTime: 120,
+    endTime: 150,
+    maxActiveItems: 12,
+    spawnIntervalMs: 3_000,
+    itemTypeMix: [
+      { type: 'slack', weight: 10 },
+      { type: 'email', weight: 10 },
+      { type: 'client', weight: 25 },
+      { type: 'p0', weight: 25 },
+      { type: 'sync', weight: 15 },
+      { type: 'per-my-last', weight: 15 },
+    ],
+  },
+];
